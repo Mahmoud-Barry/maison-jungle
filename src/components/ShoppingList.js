@@ -4,14 +4,22 @@ const plantList = [
     'ficus lyrata',
     'pothos argenté',
     'yucca',
-    'palmier'
+    'palmier',{
+        name: 'monstera',
+        category: 'classique',
+        id: '1ed',
+        isBestSale: true
+    }
 ]
+
 function ShoppingList(){
     return(
         <ul>
-            {plantList.map((plant, index) => (
-                <li key={`${plant}-${index}`}>{ plant }</li>
-            ))}
+            {plantList.map((plant) => (
+    <li key={ plant.id }>
+        {plant.isBestSale ? <span>🔥</span> : <span>👎</span>}
+    </li>
+))}
         </ul>
     )
 }
